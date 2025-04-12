@@ -1,0 +1,220 @@
+<!-- Sección 1: Hero Banner -->
+<section
+  class="relative min-h-screen bg-white flex flex-col md:flex-row items-center justify-center px-6 md:px-12 overflow-hidden"
+>
+  <!-- Imagen (a generar) -->
+  <div
+    class="w-full md:w-1/2 h-72 md:h-[500px] bg-cover bg-center rounded-xl shadow-lg mb-10 md:mb-0 md:mr-8 animate-fade-in-left opacity-0"
+    style="background-image: url('about-hero.png');"
+    [appScrollAnimate]="'animate-fade-in-left'"
+  >
+    <!-- Esta imagen será reemplazada por una generada -->
+  </div>
+
+  <!-- Contenido de texto -->
+  <div
+    class="text-center md:text-left w-full md:w-1/2 opacity-0"
+    [appScrollAnimate]="'animate-fade-in-up'"
+  >
+    <h1 class="text-4xl md:text-5xl font-headline text-primary mb-6">
+      ¿Quiénes Somos?
+    </h1>
+    <p class="text-base md:text-lg text-greyDark leading-relaxed mb-4">
+      Mantenimiento & Montajes JJ SAS es una empresa colombiana con más de una década de experiencia en el sector industrial, destacándose por su compromiso, calidad técnica y soluciones integrales para maquinaria y montajes especializados.
+    </p>
+    <p class="text-sm text-greyDark">
+      Con sede en Bogotá, prestamos servicios a nivel nacional en automatización, mantenimiento, fabricación, pintura y más.
+    </p>
+  </div>
+</section>
+
+
+
+  <!-- Sección 2: Historia y Valores -->
+  
+  <section class="bg-white py-20 px-4 md:px-12" id="historia">
+    <div class="max-w-6xl mx-auto space-y-16">
+  
+      <!-- Historia -->
+      <div
+        class="text-center max-w-3xl mx-auto opacity-0"
+        [appScrollAnimate]="'animate-fade-in-up'"
+      >
+        <h2 class="text-3xl md:text-4xl font-headline text-primary mb-6">Nuestra Historia</h2>
+        <p class="text-greyDark text-base leading-relaxed">
+          Mantenimiento & Montajes JJ SAS nace hace más de una década con la visión de ofrecer soluciones integrales en el sector industrial colombiano. A lo largo de los años, hemos consolidado un equipo multidisciplinario y nos hemos especializado en proyectos de alta complejidad, abarcando áreas como mantenimiento mecánico, automatización, sistemas hidráulicos y fabricación metálica.
+        </p>
+      </div>
+  
+      <!-- Valores -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-greyLight p-6 rounded-xl text-center transition-transform duration-500 hover:scale-[1.02] hover:shadow-xl opacity-0"
+          [appScrollAnimate]="'animate-bounce-in delay-100'"
+        >
+          <span class="material-icons text-primary text-4xl mb-2">verified</span>
+          <h3 class="font-semibold text-primary text-lg mb-2">Compromiso</h3>
+          <p class="text-sm text-greyDark">Cumplimos con lo pactado, en tiempos, calidad y resultados.</p>
+        </div>
+  
+        <div
+          class="bg-greyLight p-6 rounded-xl text-center transition-transform duration-500 hover:scale-[1.02] hover:shadow-xl opacity-0"
+          [appScrollAnimate]="'animate-bounce-in delay-200'"
+        >
+          <span class="material-icons text-primary text-4xl mb-2">engineering</span>
+          <h3 class="font-semibold text-primary text-lg mb-2">Técnica</h3>
+          <p class="text-sm text-greyDark">Nuestro equipo trabaja con base en principios de ingeniería aplicada.</p>
+        </div>
+  
+        <div
+          class="bg-greyLight p-6 rounded-xl text-center transition-transform duration-500 hover:scale-[1.02] hover:shadow-xl opacity-0"
+          [appScrollAnimate]="'animate-bounce-in delay-300'"
+        >
+          <span class="material-icons text-primary text-4xl mb-2">build_circle</span>
+          <h3 class="font-semibold text-primary text-lg mb-2">Evolución</h3>
+          <p class="text-sm text-greyDark">Nos adaptamos a cada industria y mejoramos nuestros procesos continuamente.</p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <section class="bg-greyLight py-20 px-4 md:px-12 overflow-hidden" id="mision">
+    <div class="max-w-7xl mx-auto text-center mb-12 opacity-0" [appScrollAnimate]="'animate-fade-in-up'">
+      <h2 class="text-3xl md:text-4xl font-headline text-primary">Nuestra Esencia</h2>
+      <p class="text-greyDark mt-2 text-base max-w-2xl mx-auto">
+        Los pilares que guían cada uno de nuestros proyectos, decisiones y relaciones con nuestros clientes.
+      </p>
+    </div>
+  
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white rounded-xl shadow-xl p-6 text-center hover:scale-[1.03] opacity-0 transition-transform" [appScrollAnimate]="'animate-zoom-in'">
+        <span class="material-icons text-primary text-5xl mb-4">flag</span>
+        <h3 class="text-xl font-headline text-primary mb-2">Misión</h3>
+        <p class="text-sm text-greyDark leading-relaxed">
+          Proveer soluciones técnicas y de mantenimiento industrial que garanticen eficiencia, seguridad y calidad para nuestros clientes a nivel nacional.
+        </p>
+      </div>
+  
+      <div class="bg-white rounded-xl shadow-xl p-6 text-center hover:scale-[1.03] opacity-0 transition-transform" [appScrollAnimate]="'animate-zoom-in'">
+        <span class="material-icons text-primary text-5xl mb-4">visibility</span>
+        <h3 class="text-xl font-headline text-primary mb-2">Visión</h3>
+        <p class="text-sm text-greyDark leading-relaxed">
+          Ser reconocidos como referentes en montajes, mantenimiento y automatización industrial en Colombia, destacándonos por nuestro profesionalismo y compromiso.
+        </p>
+      </div>
+  
+      <div class="bg-white rounded-xl shadow-xl p-6 text-center hover:scale-[1.03] opacity-0 transition-transform" [appScrollAnimate]="'animate-zoom-in'">
+        <span class="material-icons text-primary text-5xl mb-4">psychology</span>
+        <h3 class="text-xl font-headline text-primary mb-2">Filosofía</h3>
+        <p class="text-sm text-greyDark leading-relaxed">
+          Trabajamos con enfoque técnico, humano y proactivo. Creemos en la mejora continua, la seguridad laboral y el crecimiento conjunto con nuestros aliados.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-white py-20 px-4 md:px-12 overflow-hidden" id="capacidades">
+    <div class="max-w-7xl mx-auto text-center mb-12 opacity-0" [appScrollAnimate]="'animate-fade-in-up'">
+      <h2 class="text-3xl md:text-4xl font-headline text-primary">Áreas de Especialización</h2>
+      <p class="text-greyDark mt-2 text-base max-w-2xl mx-auto">
+        Contamos con la infraestructura, personal y experiencia para intervenir procesos industriales complejos.
+      </p>
+    </div>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="p-6 bg-greyLight rounded-xl text-center transition-all hover:scale-105 hover:shadow-xl opacity-0" [appScrollAnimate]="'animate-slide-in-left'">
+        <span class="material-icons text-primary text-5xl mb-3">memory</span>
+        <h3 class="font-headline text-lg text-primary font-semibold mb-1">Automatización</h3>
+        <p class="text-sm text-greyDark">Montaje de sensores, PLCs, lógica y sistemas de control.</p>
+      </div>
+  
+      <div class="p-6 bg-greyLight rounded-xl text-center transition-all hover:scale-105 hover:shadow-xl opacity-0" [appScrollAnimate]="'animate-slide-in-left'">
+        <span class="material-icons text-primary text-5xl mb-3">build</span>
+        <h3 class="font-headline text-lg text-primary font-semibold mb-1">Mantenimiento</h3>
+        <p class="text-sm text-greyDark">Correctivo, preventivo y predictivo en plantas industriales.</p>
+      </div>
+  
+      <div class="p-6 bg-greyLight rounded-xl text-center transition-all hover:scale-105 hover:shadow-xl opacity-0" [appScrollAnimate]="'animate-slide-in-left'">
+        <span class="material-icons text-primary text-5xl mb-3">engineering</span>
+        <h3 class="font-headline text-lg text-primary font-semibold mb-1">Montajes industriales</h3>
+        <p class="text-sm text-greyDark">Estructuras metálicas, eléctricos, neumáticos e hidráulicos.</p>
+      </div>
+  
+      <div class="p-6 bg-greyLight rounded-xl text-center transition-all hover:scale-105 hover:shadow-xl opacity-0" [appScrollAnimate]="'animate-slide-in-left'">
+        <span class="material-icons text-primary text-5xl mb-3">water</span>
+        <h3 class="font-headline text-lg text-primary font-semibold mb-1">Sistemas hidráulicos</h3>
+        <p class="text-sm text-greyDark">Montaje y mantenimiento de circuitos de alta presión.</p>
+      </div>
+  
+      <div class="p-6 bg-greyLight rounded-xl text-center transition-all hover:scale-105 hover:shadow-xl opacity-0" [appScrollAnimate]="'animate-slide-in-left'">
+        <span class="material-icons text-primary text-5xl mb-3">air</span>
+        <h3 class="font-headline text-lg text-primary font-semibold mb-1">Sistemas neumáticos</h3>
+        <p class="text-sm text-greyDark">Líneas de aire, válvulas, actuadores y control neumático.</p>
+      </div>
+  
+      <div class="p-6 bg-greyLight rounded-xl text-center transition-all hover:scale-105 hover:shadow-xl opacity-0" [appScrollAnimate]="'animate-slide-in-left'">
+        <span class="material-icons text-primary text-5xl mb-3">health_and_safety</span>
+        <h3 class="font-headline text-lg text-primary font-semibold mb-1">Seguridad industrial</h3>
+        <p class="text-sm text-greyDark">Diseño de protocolos, señalización, EPP y medidas preventivas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5: Resultados -->
+<section class="bg-greyLight py-20 px-4 md:px-12 overflow-hidden" id="resultados">
+    <div
+      class="max-w-7xl mx-auto text-center mb-12 opacity-0"
+      [appScrollAnimate]="'animate-fade-in-up'"
+      (visible)="animateStats()"
+    >
+      <h2 class="text-3xl md:text-4xl font-headline text-primary">
+        Resultados que nos respaldan
+      </h2>
+      <p class="text-greyDark mt-2 text-base max-w-2xl mx-auto">
+        Cada cifra representa nuestro compromiso con la calidad, el cumplimiento y la satisfacción de nuestros clientes.
+      </p>
+    </div>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div
+        *ngFor="let stat of experienceStats"
+        class="group bg-white rounded-xl shadow-lg p-6 text-center transition-transform hover:scale-[1.03] opacity-0"
+        [appScrollAnimate]="'animate-zoom-in'"
+      >
+        <span class="material-icons text-primary text-5xl mb-2">{{ stat.icon }}</span>
+        <h3 class="text-lg font-headline text-primary mb-1">{{ stat.title }}</h3>
+        <p class="text-sm text-greyDark mb-4">{{ stat.description }}</p>
+        <div class="text-4xl font-bold text-black group-hover:text-primary transition">
+          {{ stat.current }}{{ stat.suffix }}
+        </div>
+        <p class="text-xs text-greyDark">{{ stat.label }}</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="bg-primary py-20 px-4 md:px-12 text-white text-center overflow-hidden" id="llamado">
+    <div
+      class="max-w-4xl mx-auto space-y-6 opacity-0"
+      [appScrollAnimate]="'animate-fade-in-up'"
+    >
+      <h2 class="text-3xl md:text-4xl font-headline">
+        ¿Listo para llevar tu operación al siguiente nivel?
+      </h2>
+  
+      <p class="text-base md:text-lg text-white/80 leading-relaxed">
+        Ponte en contacto con nosotros y descubre cómo <strong>Mantenimientos & Montajes JJ</strong> puede ayudarte con soluciones técnicas a medida.
+      </p>
+  
+      <a
+        href="https://wa.me/573193595150?text=Hola,%20estoy%20interesado%20en%20cotizar%20un%20servicio"
+        target="_blank"
+        class="inline-block mt-4 px-8 py-3 bg-white text-primary hover:bg-greyLight transition-all duration-300 rounded-full font-semibold text-sm shadow-md hover:scale-105"
+      >
+        Contáctanos por WhatsApp
+      </a>
+    </div>
+  </section>
+  
+  

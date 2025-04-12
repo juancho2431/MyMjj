@@ -1,0 +1,151 @@
+/* Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Embla Carousel transition */
+.embla__container {
+  transition: transform 800ms cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change: transform;
+  scroll-snap-type: none !important;
+}
+
+/* -----------------------------
+   🎬 ANIMACIONES PERSONALIZADAS
+------------------------------ */
+
+/* Fade In Up */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in-left {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in-right {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-down {
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-zoom-in {
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* Scale Up */
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.animate-scale-up {
+  animation: scaleUp 0.7s ease-out forwards;
+}
+
+/* Rotate In */
+@keyframes rotateIn {
+  from { opacity: 0; transform: rotate(-15deg); }
+  to { opacity: 1; transform: rotate(0); }
+}
+.animate-rotate-in {
+  animation: rotateIn 0.7s ease-out forwards;
+}
+
+/* Bounce In */
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.9); }
+  60%  { transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-bounce-in {
+  animation: bounceIn 0.9s ease-out forwards;
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in-right {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+/* -----------------------------
+   ✨ VISIBILIDAD CONTROLADA POR SCROLL
+------------------------------ */
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+/* Transición general si usas appScrollAnimate */
+.transition-opacity {
+  transition: opacity 0.8s ease-out;
+}
+
+/* -----------------------------
+   🎯 DOTS del carousel
+------------------------------ */
+
+.embla__dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 9999px;
+  background: #ffffff50;
+  transition: all 0.3s ease;
+}
+
+.embla__dot--active {
+  background: white;
+  width: 24px;
+}

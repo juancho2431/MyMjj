@@ -1,0 +1,297 @@
+<div class="embla relative h-screen w-full overflow-hidden">
+  <div
+    class="embla__container flex h-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
+  >
+    <!-- Slides -->
+    <ng-container *ngFor="let slide of slides">
+      <div
+        class="embla__slide flex-[0_0_100%] bg-cover bg-center relative"
+        [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }"
+      >
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div
+          class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4 animate-fade-in-up"
+        >
+          <h2 class="text-4xl md:text-6xl font-headline text-primary">{{ slide.title }}</h2>
+          <p class="mt-4 text-lg">{{ slide.description }}</p>
+          <a
+            href="https://wa.me/573193595150?text=Hola,%20estoy%20interesado%20en%20sus%20servicios"
+            target="_blank"
+            class="mt-6 px-6 py-3 bg-primary hover:bg-primaryDark transition rounded-full text-white font-semibold text-sm shadow-lg"
+          >
+            Escríbenos
+          </a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Flechas -->
+  <button
+  (click)="prev()"
+  class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-primary p-3 rounded-full text-white"
+  aria-label="Slide anterior"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+  </svg>
+</button>
+
+<button
+  (click)="next()"
+  class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-primary p-3 rounded-full text-white"
+  aria-label="Slide siguiente"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+  </svg>
+</button>
+
+
+
+  <!-- Dots -->
+  <div class="absolute bottom-6 w-full flex justify-center gap-2 z-20">
+    <div
+      *ngFor="let slide of slides; let i = index"
+      class="embla__dot"
+      [ngClass]="{ 'embla__dot--active': i === selectedIndex }"
+      (click)="scrollTo(i)"
+    ></div>
+  </div>
+</div>
+
+
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <h2 class="text-center text-4xl font-headline text-primary mb-10">
+    Nuestros Servicios
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-5 gap-2 m-4">
+    <a [routerLink]="services[0].route" class="p-5 rounded-xl {{ services[0].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-1 md:row-start-1 md:col-span-2">
+
+      <span class="material-icons text-3xl">{{ services[0].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[0].title }}</h3>
+      <p>{{ services[0].description }}</p>
+    </a>
+
+    <a [routerLink]="services[1].route" class="p-5 rounded-xl {{ services[1].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-1 md:row-start-2">
+      <span class="material-icons text-3xl">{{ services[1].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[1].title }}</h3>
+      <p>{{ services[1].description }}</p>
+    </a>
+
+    <a [routerLink]="services[2].route" class="p-5 rounded-xl {{ services[2].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-2 md:row-start-2 md:row-span-2">
+      <span class="material-icons text-3xl">{{ services[2].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[2].title }}</h3>
+      <p>{{ services[2].description }}</p>
+    </a>
+
+    <a [routerLink]="services[3].route" class="p-5 rounded-xl {{ services[3].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-1 md:row-start-3 md:row-span-3">
+      <span class="material-icons text-3xl">{{ services[3].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[3].title }}</h3>
+      <p>{{ services[3].description }}</p>
+    </a>
+
+    <a [routerLink]="services[4].route" class="p-5 rounded-xl {{ services[4].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-2 md:row-start-4">
+      <span class="material-icons text-3xl">{{ services[4].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[4].title }}</h3>
+      <p>{{ services[4].description }}</p>
+    </a>
+
+    <a [routerLink]="services[5].route" class="p-5 rounded-xl {{ services[5].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-3 md:row-start-1 md:row-span-2">
+      <span class="material-icons text-3xl">{{ services[5].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[5].title }}</h3>
+      <p>{{ services[5].description }}</p>
+    </a>
+
+    <a [routerLink]="services[6].route" class="p-5 rounded-xl {{ services[6].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-4 md:row-start-1">
+      <span class="material-icons text-3xl">{{ services[6].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[6].title }}</h3>
+      <p>{{ services[6].description }}</p>
+    </a>
+
+    <a [routerLink]="services[7].route" class="p-5 rounded-xl {{ services[7].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-4 md:row-start-2 md:row-span-2">
+      <span class="material-icons text-3xl">{{ services[7].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[7].title }}</h3>
+      <p>{{ services[7].description }}</p>
+    </a>
+
+    <a [routerLink]="services[8].route" class="p-5 rounded-xl {{ services[8].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-3 md:row-start-3 md:row-span-2">
+      <span class="material-icons text-3xl">{{ services[8].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[8].title }}</h3>
+      <p>{{ services[8].description }}</p>
+    </a>
+
+    <a [routerLink]="services[9].route" class="p-5 rounded-xl {{ services[9].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-2 md:row-start-5 md:col-span-2">
+      <span class="material-icons text-3xl">{{ services[9].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[9].title }}</h3>
+      <p>{{ services[9].description }}</p>
+    </a>
+
+    <a [routerLink]="services[10].route" class="p-5 rounded-xl {{ services[10].bgColor }} hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300 ease-in-out md:col-start-4 md:row-start-4 md:row-span-2">
+      <span class="material-icons text-3xl">{{ services[10].icon }}</span>
+      <h3 class="uppercase font-bold">{{ services[10].title }}</h3>
+      <p>{{ services[10].description }}</p>
+    </a>
+  </div>
+</section>
+
+
+<section class="bg-white py-20 px-4 md:px-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    
+    <!-- Imagen -->
+    <div class="w-full h-full opacity-0" appScrollAnimate>
+      <img src="aboutus.jpg" alt="Quienes Somos" class="w-full rounded-xl shadow-lg object-cover" />
+    </div>
+
+    <!-- Texto -->
+    <div class="opacity-0" appScrollAnimate>
+      <h2 class="text-3xl md:text-4xl font-headline text-primary mb-6">¿Quiénes Somos?</h2>
+      <p class="text-greyDark text-base mb-6 leading-relaxed">
+        Mantenimiento & Montajes JJ SAS es una empresa colombiana con más de 10 años de experiencia en el sector industrial, especializada en mantenimiento, fabricación y montaje de maquinaria y equipos para la producción de concreto.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-greyLight p-4 rounded-md opacity-0" appScrollAnimate>
+          <h3 class="text-lg font-semibold text-primary">+10 años de experiencia</h3>
+          <p class="text-sm text-greyDark">en montajes y mantenimientos industriales.</p>
+        </div>
+        <div class="bg-greyLight p-4 rounded-md opacity-0" appScrollAnimate>
+          <h3 class="text-lg font-semibold text-primary">Cobertura nacional</h3>
+          <p class="text-sm text-greyDark">en todo el territorio colombiano.</p>
+        </div>
+        <div class="bg-greyLight p-4 rounded-md opacity-0" appScrollAnimate>
+          <h3 class="text-lg font-semibold text-primary">Soluciones integrales</h3>
+          <p class="text-sm text-greyDark">adaptadas a las necesidades de cada cliente.</p>
+        </div>
+        <div class="bg-greyLight p-4 rounded-md opacity-0" appScrollAnimate>
+          <h3 class="text-lg font-semibold text-primary">Personal calificado</h3>
+          <p class="text-sm text-greyDark">con conocimientos técnicos certificados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section
+  class="bg-white py-20 px-4 md:px-12 min-h-[60vh] relative opacity-0 invisible transition-opacity duration-700"
+  [appScrollAnimate]="'animate-fade-in-up'"
+  (visible)="animateStats()"
+>
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-headline text-primary">
+      Áreas de Experiencia
+    </h2>
+    <p class="text-greyDark mt-2 text-base">
+      Conocimiento técnico especializado en diferentes campos industriales
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div
+      *ngFor="let stat of experienceStats"
+      class="group bg-greyLight rounded-lg p-6 text-left transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:rotate-1 hover:bg-white opacity-0 invisible"
+      [appScrollAnimate]="'animate-zoom-in'"
+    >
+      <span class="material-icons text-primary text-4xl mb-2">
+        {{ stat.icon }}
+      </span>
+      <h3 class="text-lg font-semibold text-primary mb-1 uppercase">
+        {{ stat.title }}
+      </h3>
+      <p class="text-sm text-greyDark mb-3">{{ stat.description }}</p>
+      <div class="text-3xl font-bold text-black group-hover:text-primary transition-all">
+        {{ stat.current }}<span *ngIf="stat.suffix">{{ stat.suffix }}</span>
+      </div>
+      <p class="text-xs text-greyDark">{{ stat.label }}</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-greyLight py-20 px-4 md:px-12 overflow-hidden">
+  <div class="max-w-7xl mx-auto text-center mb-12 animate-fade-in-up">
+    <h2 class="text-3xl md:text-4xl font-headline text-primary">Testimonios de Clientes</h2>
+    <p class="text-greyDark mt-2 text-base">
+      Opiniones reales de empresas que confiaron en nosotros
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div
+      *ngFor="let testimonial of testimonials"
+      class="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl opacity-0"
+      appScrollAnimate
+    >
+      <p class="text-greyDark italic mb-6">“{{ testimonial.quote }}”</p>
+      <div class="flex items-center gap-4 mt-auto">
+        <img
+          [src]="testimonial.image"
+          alt="{{ testimonial.name }}"
+          class="w-14 h-14 rounded-full object-cover shadow-md"
+        />
+        <div>
+          <p class="font-bold text-black leading-tight">{{ testimonial.name }}</p>
+          <p class="text-sm text-greyDark">
+            {{ testimonial.position }} · {{ testimonial.company }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="bg-white py-20 px-4 md:px-12 overflow-hidden opacity-0"
+  appScrollAnimate
+>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- 🗺️ Mapa con animación izquierda -->
+    <div
+      class="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-lg transform opacity-0 transition-all duration-700 ease-out delay-100"
+      appScrollAnimate
+    >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.115666313498!2d-74.16335553047985!3d4.689374199705355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9d81fb667ba5%3A0x94ea77390aa2d0ba!2sAltron%20ingenieria!5e0!3m2!1ses-419!2sco!4v1744247561837!5m2!1ses-419!2sco"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <!-- 📞 Contacto con animación derecha -->
+    <div
+      class="opacity-0 transition-all duration-700 ease-out delay-200"
+      appScrollAnimate
+    >
+      <h2 class="text-3xl md:text-4xl font-headline text-primary mb-6">
+        ¿Dónde nos encuentras?
+      </h2>
+      <p class="text-greyDark mb-6 text-base leading-relaxed">
+        Estamos ubicados en Bogotá, Colombia. Contáctanos para cotizaciones, asesorías o cualquier inquietud técnica. ¡Estaremos encantados de ayudarte!
+      </p>
+
+      <ul class="space-y-4 text-sm text-greyDark">
+        <li><span class="material-icons text-primary mr-2 align-middle">place</span> Bogotá, Colombia</li>
+        <li><span class="material-icons text-primary mr-2 align-middle">call</span> 319 359 5150</li>
+        <li><span class="material-icons text-primary mr-2 align-middle">call</span> 317 886 7850</li>
+        <li><span class="material-icons text-primary mr-2 align-middle">call</span> 304 586 6299</li>
+        <li><span class="material-icons text-primary mr-2 align-middle">language</span> www.mantenimientosymontajesjj.com</li>
+        <li><span class="material-icons text-primary mr-2 align-middle">email</span> contacto&#64;mantenimientosjj.com</li>
+      </ul>
+
+      <a
+        href="https://wa.me/573193595150?text=Hola,%20estoy%20interesado%20en%20cotizar%20un%20servicio"
+        target="_blank"
+        class="inline-block mt-6 px-6 py-3 bg-primary hover:bg-primaryDark transition rounded-full text-white font-semibold text-sm shadow-lg"
+      >
+        Contáctanos por WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
